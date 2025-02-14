@@ -558,7 +558,20 @@
     </section>
 
     
+    <!--Xswap Iframe Section-->
+    <section class="xswap-exchange join-section-two" id="xswap-exchange">
+        <div class="curve-layer" style="background-image: url('assets/images/background/curved-layer-1.png');"></div>
+        <div class="auto-container">
+            <div class="title-box-two centered">
+                <h2>Purchase GAMA</h2>
+                <div class="text-content">Get Your Gama Tokens</div>
+            </div>
+            <iframe id="myiFrame" class="xswap-iframe" src="https://swap.xdcobserver.io/exchange/fbb1a966-3ea8-4c89-922c-525a4d78cbd8" width="100%" height="400" title="Xswap-exchange" style="border-radius: 24px;"></iframe>
+            <div class="mt-2 text-content">Powered by GAMA</div>
+        </div>
+    </section>
 
+    
     <!--Build on Section-->
     <section class="buildon-section">
         <div class="auto-container">
@@ -595,7 +608,6 @@
             </div>
         </div>
     </section>
-
 
 
     <!--Join Section-->
@@ -681,6 +693,20 @@
 <script src="assets/js/PageScroll.js"></script>
 <script src="assets/js/appear.js"></script>
 <script src="assets/js/custom-script.js"></script>
+  <script>
+    const iframe = document.getElementById("myiFrame");
+
+    // Send a message to the iframe's content window to change the style
+    iframe.onload = () => {
+        iframe.contentWindow.postMessage({ 
+            action: "changeBodyStyle", 
+            data: JSON.stringify({
+                background: "-webkit-linear-gradient(268.19deg, rgba(30, 58, 205, 0.04) 0.89%, rgba(247, 247, 247, 0) 82.18%)",
+            }) 
+        }, "*");
+    };
+</script>
+
 </body>
 
 </html>
