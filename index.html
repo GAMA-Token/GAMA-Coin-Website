@@ -291,6 +291,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-4">
+                    <div class="single-how bg-lightblue">
+                        <h4 class="mb-4">Roulette</h4>
+                        <div class="how-img">
+                            <div class="big-icon"><img src="assets/images/resource/roulette.png" alt=""></div>
+                        </div>
+                        <div class="link mt-4">
+                            <!-- <a href="https://roulette.gamacoin.ai/" target="_blank" class="theme-btn btn-style-three"><span class="txt">Play Now</span></a> -->
+                            <a href="#" class="theme-btn btn-style-three"><span class="txt">Coming Soon</span></a>
+                        </div>
+                    </div>
+                </div>
             </div>                
         </div>
     </section>
@@ -372,25 +384,27 @@
             </div>
             <div class="row clearfix">
                 <div class="why-block-two col-lg-6 col-md-6 col-sm-12">                    
-                    <div class="inner-box">
-                        <a href="https://coinmarketcap.com/currencies/gama-coin/">
+                    <a href="https://coinmarketcap.com/currencies/gama-coin/">
+                        <div class="inner-box">
                             <div class="inner">
                                 <div class="icon-box no-anim"><span class="icon"><img src="assets/images/resource/coinmarketcap-logo.png" alt="" class="br-20"></span></div>
                                 <h4>CoinMarketCap</h4>
                                 <div class="text">CoinMarketCap is the world's most-referenced price-tracking website for cryptoassets in the rapidly growing cryptocurrency space.</div>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                     
                 </div>
                 <div class="why-block-two col-lg-6 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="inner">
-                            <div class="icon-box no-anim"><span class="icon"><img src="assets/images/resource/coingecko-logo.png" alt="" class="br-20"></span></div>
-                            <h4>CoinGecko</h4>
-                            <div class="text">CoinGecko provides a fundamental analysis of the crypto market to track price, volume, market capitalization, etc.</div>
+                    <a href="https://www.coingecko.com/en/coins/gama-coin">
+                        <div class="inner-box">
+                            <div class="inner">
+                                <div class="icon-box no-anim"><span class="icon"><img src="assets/images/resource/coingecko-logo.png" alt="" class="br-20"></span></div>
+                                <h4>CoinGecko</h4>
+                                <div class="text">CoinGecko provides a fundamental analysis of the crypto market to track price, volume, market capitalization, etc.</div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                             
             </div>
@@ -556,7 +570,20 @@
     </section>
 
     
+    <!--Xswap Iframe Section-->
+    <section class="xswap-exchange join-section-two" id="xswap-exchange">
+        <div class="curve-layer" style="background-image: url('assets/images/background/curved-layer-1.png');"></div>
+        <div class="auto-container">
+            <div class="title-box-two centered">
+                <h2>Purchase GAMA</h2>
+                <div class="text-content">Get Your Gama Tokens</div>
+            </div>
+            <iframe id="myiFrame" class="xswap-iframe" src="https://swap.xdcobserver.io/exchange/53783a03-d823-438f-bf1d-589b7be4c24f" width="100%" height="400" title="Xswap-exchange" style="border-radius: 24px;"></iframe>
+            <div class="mt-2 text-content">Powered by XDC Anyswap</div>
+        </div>
+    </section>
 
+    
     <!--Build on Section-->
     <section class="buildon-section">
         <div class="auto-container">
@@ -595,7 +622,6 @@
     </section>
 
 
-
     <!--Join Section-->
     <section class="join-section-two" id="join-community">
         <div class="curve-layer" style="background-image: url('assets/images/background/curved-layer-1.png');"></div>
@@ -628,10 +654,10 @@
                             <div class="widget-title"><h5>Other Links</h5></div>
                             <div class="widget-content">
                                 <div class="links">
-                                    <ul class="clearfix">
+                                    <ul class="clearfix" id="scroll-nav">
                                         <li><a href="#">Connect Wallet & Play</a></li>
                                         <li><a href="#">Game List</a></li>
-                                        <li><a href="#">Play Now</a></li>
+                                        <li><a href="#play-games">Play Now</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -679,6 +705,20 @@
 <script src="assets/js/PageScroll.js"></script>
 <script src="assets/js/appear.js"></script>
 <script src="assets/js/custom-script.js"></script>
+  <script>
+    const iframe = document.getElementById("myiFrame");
+
+    // Send a message to the iframe's content window to change the style
+    iframe.onload = () => {
+        iframe.contentWindow.postMessage({ 
+            action: "changeBodyStyle", 
+            data: JSON.stringify({
+                background: "-webkit-linear-gradient(268.19deg, rgba(30, 58, 205, 0.04) 0.89%, rgba(247, 247, 247, 0) 82.18%)",
+            }) 
+        }, "*");
+    };
+</script>
+
 </body>
 
 </html>
